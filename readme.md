@@ -52,9 +52,9 @@ cargo install deno --locked
   docker pull 8892/soapui:latest
   docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" "$CI_REGISTRY"
   docker create -e SERVICE_NAME='user-server' -e PUSH_GATE_WAY='$PUSH_GATE_WAY' -e SLACK_CHANNEL='$SLACK_CHANNEL' --name="$CI_CONTAINER_NAME" 8892/soapui:latest
-  docker cp ./testcases/test.xml ${CI_CONTAINER_NAME}:/automation_test/src/environments/test.xml
-  docker cp ./testcases/endpoints.json ${CI_CONTAINER_NAME}:/automation_test/src/endpoints.json
+  docker cp ./testcases/test.xml ${CI_CONTAINER_NAME}:/${CI_CONTAINER_NAME}/src/environments/test.xml
+  docker cp ./testcases/endpoints.json ${CI_CONTAINER_NAME}:/${CI_CONTAINER_NAME}/src/endpoints.json
   docker start ${CI_CONTAINER_NAME}
   docker logs -f ${CI_CONTAINER_NAME} 
-  docker cp ${CI_CONTAINER_NAME}:/automation_test/succeed/api.txt . # Check success process
+  docker cp ${CI_CONTAINER_NAME}:/${CI_CONTAINER_NAME}/succeed/api.txt . # Check success process
 ```
