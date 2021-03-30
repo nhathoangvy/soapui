@@ -22,28 +22,6 @@ sudo service docker start
 ```
 + Mac: https://docs.docker.com/docker-for-mac/install/
 
-Deno ( For run local )
-Deno ships as a single executable with no dependencies. You can install it using the installers below, or download a release binary from the releases page.
-
-Shell (Mac, Linux):
-
-curl -fsSL https://deno.land/x/install/install.sh | sh
-PowerShell (Windows):
-
-iwr https://deno.land/x/install/install.ps1 -useb | iex
-Homebrew (Mac):
-
-brew install deno
-Chocolatey (Windows):
-
-choco install deno
-Scoop (Windows):
-
-scoop install deno
-Build and install from source using Cargo:
-
-cargo install deno --locked
-
 ### CI/CD
 ```
   export CI_APPLICATION_REPOSITORY=$CI_REGISTRY_IMAGE
