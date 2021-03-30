@@ -1,5 +1,10 @@
 ## Automation Testing
-Automation Test Step for Gitlab CI
+Automation Test Step for Gitlab CI:
+
+1. Automation testing API
+2. Report push to gateway
+3. Ping slack channel
+
 Docker hub: 
 ```
     docker pull 8892/soapui:latest
