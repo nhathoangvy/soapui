@@ -24,9 +24,6 @@ sudo service docker start
 
 ### CI/CD
 ```
-  export CI_APPLICATION_REPOSITORY=$CI_REGISTRY_IMAGE
-  export CI_APPLICATION_TAG=$CI_COMMIT_SHA
-  export CI_CONTAINER_NAME=ci_job_build_${CI_JOB_ID}
   docker pull 8892/soapui:latest
   docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" "$CI_REGISTRY"
   docker create -e SERVICE_NAME='user-server' -e PUSH_GATE_WAY='$PUSH_GATE_WAY' -e SLACK_CHANNEL='$SLACK_CHANNEL' --name="$CI_CONTAINER_NAME" 8892/soapui:latest
